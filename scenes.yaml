@@ -1,0 +1,7 @@
+- name: "Bed Time"
+  entities:
+    light.living_room_back_lamp:
+      state: off
+    light.living_room_front_lamp:
+      state: off
+    switch.power_state: off

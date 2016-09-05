@@ -1,0 +1,24 @@
+exterior_off_night:
+  name: Disable Exterior Lights Off at Night
+  initial: off
+  icon: mdi:weather-night
+
+exterior_on_sunset:
+  name: Disable Exterior Lights On at Sunset
+  initial: off
+  icon: mdi:weather-sunset-down
+
+thermostat_away:
+  name: Thermostat Away Mode
+  initial: off
+  icon: mdi:walk
+
+vacation_mode:
+  name: Vacation Mode
+  initial: off
+  icon: mdi:airplane
+
+bedtime:
+  name: Bedtime
+  initial: off
+  icon: mdi:hotel

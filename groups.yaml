@@ -1,0 +1,119 @@
+default_view:
+  view: yes
+  icon: mdi:home
+  entities:
+    - group.living_room
+    - group.outside_lights
+    - group.environment
+    - group.automation_on_demand
+    - climate.thermostat
+    - scene.bed_time
+    - device_tracker.REDACTED_g4
+    - device_tracker.REDACTED_6
+
+automation:
+  name: Automation
+  view: yes
+  icon: mdi:robot
+  entities:
+    - group.automation_override
+    - group.automation_on_demand
+
+lights:
+  name: Lights
+  view: yes
+  icon: mdi:lightbulb-outline
+  entities:
+    - group.living_room_lights
+    - group.outside_lights
+
+media:
+  name: Media
+  view: yes
+  icon: mdi:play-circle-outline
+  entities:
+    - group.media_player
+    - group.media_server
+    - group.media_downloads
+
+sensors:
+  name: Sensors
+  view: yes
+  icon: mdi:gauge
+  entities:
+    # - group.device_location
+    # - group.weather
+    # - group.indoor_temperature
+    # - group.occupancy
+    # - group.doors
+    - group.speedtest
+    - group.system
+    # - group.battery_levels
+
+Environment:
+  entities:
+    - sensor.forecastio_summary
+    - sensor.forecastio_temperature
+    - sensor.forecastio_humidity
+    - sensor.forecastio_precip_probability
+    - sun.sun
+
+Living Room Lights:
+  entities:
+    - light.living_room_back_lamp
+    - light.living_room_front_lamp
+
+Living Room:
+  entities:
+    - group.living_room_lights
+    - switch.play_xbox_one
+    - switch.watch_tv
+    - switch.power_state
+
+Outside Lights:
+  entities:
+    - light.back_porch_light
+    - light.front_porch_light
+
+System:
+  - sensor.cpu
+  - sensor.cpu_use
+  - sensor.ram_use
+  - sensor.ram_free
+  - sensor.since_last_boot
+  - updater.updater
+
+Media Server:
+  - sensor.home_media_server
+
+Media Player:
+  - media_player.roku_1gm353027160
+
+Speedtest:
+  - sensor.speedtest_ping    
+  - sensor.speedtest_download
+  - sensor.speedtest_upload
+
+Media Downloads:
+  - sensor.nzbget_article_cache
+  - sensor.nzbget_download_paused
+  - sensor.nzbget_queue_size
+  - sensor.nzbget_size
+  - sensor.nzbget_speed
+
+Automation Override:
+    # - input_boolean.rainy_day_disable
+    # - input_boolean.occupancy_lights_off_disable
+    # - input_boolean.lights_morning_disable
+    # - input_boolean.office_lights_sunset
+    - input_boolean.exterior_on_sunset
+    - input_boolean.exterior_off_night
+    # - input_boolean.home_away
+    # - input_boolean._REDACTED__away
+    # - input_boolean._REDACTED__away_driving
+    # - input_boolean._REDACTED__away
+    # - input_boolean._REDACTED__away_driving
+
+Automation On Demand:
+  - input_boolean.bedtime
+  - input_boolean.vacation_mode

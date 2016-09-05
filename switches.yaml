@@ -1,0 +1,20 @@
+- platform: mqtt
+  name: "Play Xbox One"
+  state_topic:   "home/harmony/activities/play-xbox-one/state"
+  command_topic: "home/harmony/activities/play-xbox-one/command"
+  payload_on: "on"
+  payload_off: "off"
+
+- platform: mqtt
+  name: "Watch TV"
+  state_topic:   "home/harmony/activities/watch-tv/state"
+  command_topic: "home/harmony/activities/watch-tv/command"
+  payload_on: "on"
+  payload_off: "off"
+
+- platform: mqtt
+  name: "Power State"
+  state_topic:   "home/harmony/state"
+  command_topic: "home/harmony/activities/watch-tv/command"
+  payload_on: "on"
+  payload_off: "off"

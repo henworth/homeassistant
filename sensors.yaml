@@ -1,0 +1,61 @@
+- platform: nzbget
+  host: nzbget
+  monitored_variables:
+    - article_cache
+    - download_rate
+    - download_paused
+    - download_size
+    - remaining_size
+
+- platform: gtfs
+  origin: REDACTED
+  destination: REDACTED
+  data: mbta.zip
+
+- platform: forecast
+  api_key: REDACTED
+  monitored_conditions:
+    - summary
+    # - icon
+    # - nearest_storm_distance
+    # - nearest_storm_bearing
+    # - precip_type
+    # - precip_intensity
+    - precip_probability
+    - temperature
+    # - apparent_temperature
+    # - dew_point
+    # - wind_speed
+    # - wind_bearing
+    # - cloud_cover
+    - humidity
+    # - pressure
+    # - visibility
+    # - ozone
+    # - minutely_summary
+    # - hourly_summary
+    # - daily_summary
+
+- platform: speedtest
+  monitored_conditions:
+    - ping
+    - download
+    - upload
+
+- platform: cpuspeed
+  name: CPU
+
+- platform: systemmonitor
+  resources:
+    - type: memory_free
+    - type: memory_use_percent
+    - type: processor_use
+    - type: since_last_boot
+
+- platform: plex
+  name: Home Media Server
+  host: plex
+  port: 32400
+  username: REDACTED
+  password: REDACTED
+  server: Home Media Server

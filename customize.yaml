@@ -1,0 +1,27 @@
+light.living_room_back_lamp:
+  friendly_name: "Back Lamp"
+light.living_room_front_lamp:
+  friendly_name: "Front Lamp"
+switch.play_xbox_one:
+  icon: mdi:xbox
+switch.watch_tv:
+  icon: mdi:television
+switch.power_state:
+  icon: mdi:power
+  hidden: true
+scene.bed_time:
+  icon: mdi:hotel
+sensor.forecastio_summary:
+  friendly_name: "Summary"
+sensor.forecastio_temperature:
+  friendly_name: "Temperature"
+sensor.forecastio_humidity:
+  friendly_name: "Humidity"
+sensor.forecastio_precip_probability:
+  friendly_name: "Precip Probability"
+sun.sun:
+  friendly_name: "Sun Position"
+climate.thermostat:
+  friendly_name: "Downstairs"
+media_player.roku_1gm353027160:
+  friendly_name: "Bedroom Roku"

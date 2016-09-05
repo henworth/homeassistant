@@ -1,0 +1,61 @@
+homeassistant:
+  name: Home
+  latitude: REDACTED
+  longitude: REDACTED
+  elevation: 62
+  unit_system: imperial
+  time_zone: America/New_York
+  customize: !include customize.yaml
+
+frontend:
+
+http:
+  api_password: REDACTED
+
+updater:
+
+discovery:
+
+conversation:
+
+history:
+
+logbook:
+
+sun:
+
+mqtt:
+  broker: mqtt
+  port: 1883
+  client_id: home-assistant
+  keepalive: 60
+
+light:
+  platform: hue
+  host: REDACTED
+  allow_unreachable: true
+  scan_interval: 10
+
+media_player:
+  platform: plex
+
+device_tracker:
+  - platform: nmap_tracker
+    hosts: REDACTED
+    home_interval: 10
+    consider_home: 180
+  - platform: owntracks
+    max_gps_accuracy: 200
+
+climate:
+  platform: honeywell
+  username: REDACTED
+  password: REDACTED
+  region: us
+
+group: !include groups.yaml
+scene: !include scenes.yaml
+switch: !include switches.yaml
+sensor: !include sensors.yaml
+automation: !include automation.yaml
+input_boolean: !include input_boolean.yaml

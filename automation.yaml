@@ -1,0 +1,129 @@
+- alias: "Living Room Lights on in the Evening"
+  trigger:
+    platform: sun
+    event: "sunset"
+    offset: "-00:30:00"
+  condition:
+    condition: or
+    conditions:
+      - condition: state
+        entity_id: "device_tracker.mike_g4"
+        state: "home"
+      - condition: state
+        entity_id: "device_tracker.faith_6"
+        state: "home"
+  action:
+    service: homeassistant.turn_on
+    entity_id: group.living_room_lights
+    data:
+      brightness: 150
+
+# - alias: "Outside Lights on in the Evening"
+#   trigger:
+#     platform: sun
+#     event: "sunset"
+#     offset: "-00:30:00"
+#   condition: 
+#     - condition: state
+#       entity_id: "group.outside_lights"
+#       state: "off"
+#   action:
+#     service: light.turn_on
+#     entity_id: group.outside_lights
+
+##########################################################
+## Turn On Front Porch at Sunset
+##########################################################
+
+- alias: "Turn on Front Porch at Sunset"
+
+  trigger:
+    - platform: sun
+      event: 'sunset'
+      offset: '-00:05:00'
+
+  condition:
+    - condition: state
+      entity_id: input_boolean.exterior_on_sunset
+      state: 'off'
+   # - condition: state
+   #   entity_id: input_select.holiday
+   #   state: 'None'
+
+  action:
+    service: light.turn_on
+    entity_id: light.front_porch_light
+    data:
+      brightness: 150
+
+##########################################################
+## Turn Off Front Porch at 10:00 pm
+##########################################################
+
+- alias: "Turn Off Front Porch at 10pm"
+
+  trigger:
+   - platform: time
+     after: '22:00'
+
+  condition:
+    - condition: state
+      entity_id: sun.sun
+      state: 'below_horizon'
+    - condition: state
+      entity_id: input_boolean.exterior_off_night
+      state: 'off'
+   # - condition: state
+   #   entity_id: input_select.holiday
+   #   state: 'None'
+
+  action:
+    service: light.turn_off
+    entity_id: light.front_porch_light
+
+##########################################################
+## Turn On Front Porch at Sunset
+##########################################################
+
+- alias: "Turn on Back Porch at Sunset"
+
+  trigger:
+    - platform: sun
+      event: 'sunset'
+      offset: '-00:05:00'
+
+  condition:
+    - condition: state
+      entity_id: input_boolean.exterior_on_sunset
+      state: 'off'
+   # - condition: state
+   #   entity_id: input_select.holiday
+   #   state: 'None'
+
+  action:
+    service: light.turn_on
+    entity_id: light.back_porch_light
+    data:
+      brightness: 150
+
+##########################################################
+## Turn Off Back Door at 9:30 pm
+##########################################################
+
+- alias: "Turn Off Back Door at 10pm"
+
+  trigger:
+    - platform: time
+      after: '22:00'
+     
+  condition:
+    - condition: state
+      entity_id: sun.sun
+      state: 'below_horizon'
+    - condition: state
+      entity_id: input_boolean.exterior_off_night
+      state: 'off'
+
+  action:
+   service: light.turn_off
+   entity_id: light.back_porch_light
